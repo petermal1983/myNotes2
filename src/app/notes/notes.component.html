@@ -1,0 +1,36 @@
+<div class="header">
+  <h1>Мои заметки</h1>
+</div>
+
+<div class="page-container">
+  <div class="sidebar">
+
+    <div class="list-items">
+      <ul>
+        <div *ngFor="let note of noteContent; let i = index;" class="list-item">
+          <h2 (click)="showContent($event, noteContent)">Заметка {{ note.noteNum }}</h2>
+
+        </div>
+
+      </ul>
+
+
+    </div>
+
+
+    <p>Текст заметки: <input type="text" id="notetext" name="notetext" #notetext></p>
+
+    <button type="button" (click)="addNew()" class="list-item">Добавить заметку</button>
+
+
+  </div>
+
+  <div class="note-content-container">
+    <h1 class="custom-colored-h1"> Заметка {{noteNumbers}}</h1>
+
+    <h3>{{noteTexts}}</h3>
+
+
+    </div>
+
+  </div>
